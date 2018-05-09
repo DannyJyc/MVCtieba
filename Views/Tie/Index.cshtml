@@ -1,0 +1,18 @@
+﻿@model IEnumerable<tb.Models.Tie>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>帖子</h1>
+<h2><a href="/Tie/Add">新增</a></h2>
+<ul>
+    @foreach (var itme in Model)
+    {
+        <li>
+            <a href="/TieContent/Index/@itme.id">@itme.tie_title</a>&nbsp;<span style="color: gray">@itme.createdate</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/Tie/Del/@itme.id">删除</a>
+        </li>
+    }
+</ul>
+

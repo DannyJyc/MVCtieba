@@ -1,0 +1,29 @@
+﻿@model IEnumerable<tb.Models.TieContent>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>帖子</h1>
+<div>
+    <div>
+        <h3>帖子主题：@ViewData["tie_title"]</h3>
+        <h4>主题内容：@ViewData["tie_content"]</h4>
+        <a href="/TieContent/Add">回复</a>
+        <p style="color: gray;">@ViewData["createdate"]</p>
+    </div>
+    @{
+        int i = 1;
+    }
+    @foreach (var itme in Model)
+    {
+
+        <div>
+            <h4>@i 楼</h4>
+            <h5>@itme.tie_content</h5>
+            <a href="/Hf/Add/@itme.id">引用回复</a>
+            <p style="color: gray;">@itme.createdate</p>
+            <div></div>
+        </div>
+        i++;
+    }
+</div>

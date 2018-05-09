@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MvctbModelStoreContainer" CdmEntityContainer="MvctbEntities">
+    <EntitySetMapping Name="Bas">
+      <EntityTypeMapping TypeName="MvctbModel.Ba">
+        <MappingFragment StoreEntitySet="Ba">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ba_name" ColumnName="ba_name" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hfs">
+      <EntityTypeMapping TypeName="MvctbModel.hf">
+        <MappingFragment StoreEntitySet="hf">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TieContent_id" ColumnName="TieContent_id" />
+          <ScalarProperty Name="hf_content" ColumnName="hf_content" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ties">
+      <EntityTypeMapping TypeName="MvctbModel.Tie">
+        <MappingFragment StoreEntitySet="Tie">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tie_title" ColumnName="tie_title" />
+          <ScalarProperty Name="tie_content" ColumnName="tie_content" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="Ba_id" ColumnName="Ba_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TieContents">
+      <EntityTypeMapping TypeName="MvctbModel.TieContent">
+        <MappingFragment StoreEntitySet="TieContent">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tie_id" ColumnName="Tie_id" />
+          <ScalarProperty Name="tie_content" ColumnName="tie_content" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

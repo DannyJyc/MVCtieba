@@ -1,0 +1,14 @@
+﻿@model tb.Models.Tie
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(t => t.tie_title)
+    @Html.TextBoxFor(t => t.tie_title)<br/>
+    @Html.LabelFor(t => t.tie_content)
+    @Html.TextAreaFor(t => t.tie_content)<br/>
+    <input type="submit" value="新增保存"/>
+}

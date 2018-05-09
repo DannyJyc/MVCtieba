@@ -1,0 +1,12 @@
+﻿@model tb.Models.Ba
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(b => b.ba_name)
+    @Html.TextBoxFor(b => b.ba_name)<br />
+    <input type="submit" value="新增保存" />
+}
