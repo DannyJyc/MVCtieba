@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace tb.Models
+namespace student.Models
 {
     using System;
     using System.Collections.Generic;

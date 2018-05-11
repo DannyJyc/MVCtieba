@@ -1,4 +1,4 @@
-﻿@model student.Models.Ba
+﻿@model student.Models.hf
 @{
     ViewBag.Title = "Add";
 }
@@ -6,7 +6,7 @@
 <h2>Add</h2>
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(b => b.ba_name)
-    @Html.TextBoxFor(b => b.ba_name)<br />
+    @Html.LabelFor(t => t.hf_content)
+    @Html.TextAreaFor(t => t.hf_content)<br />
     <input type="submit" value="新增保存" />
 }

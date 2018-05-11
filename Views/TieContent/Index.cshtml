@@ -1,10 +1,10 @@
-﻿@model IEnumerable<tb.Models.TieContent>
+﻿@model IEnumerable<student.Models.TieContent>
 @{
     ViewBag.Title = "Index";
 }
 
 <h1>帖子</h1>
-<div>
+<div style="border:1px solid black; padding: 20px;">
     <div>
         <h3>帖子主题：@ViewData["tie_title"]</h3>
         <h4>主题内容：@ViewData["tie_content"]</h4>
@@ -14,15 +14,19 @@
     @{
         int i = 1;
     }
-    @foreach (var itme in Model)
+    @foreach (var item in Model)
     {
 
-        <div>
+        <div style="border:1px solid cadetblue; margin-bottom: 20px;">
             <h4>@i 楼</h4>
-            <h5>@itme.tie_content</h5>
-            <a href="/Hf/Add/@itme.id">引用回复</a>
-            <p style="color: gray;">@itme.createdate</p>
-            <div></div>
+            <h5>@item.tie_content</h5>
+
+            <p style="color: gray;">@item.createdate</p>
+            @foreach (var item1 in ViewBag.a.List(item.id))
+            {
+                <div style="border:1px solid gray; width: 80%; margin-left: 20px;"><p>@item1.hf_content</p>&nbsp;&nbsp;&nbsp;<span style="color: gray;">@item1.createdate</span></div><br />
+            }
+            <a href="/TieContent/AddtoHf/@item.id">引用回复</a>
         </div>
         i++;
     }

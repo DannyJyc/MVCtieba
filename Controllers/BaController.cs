@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace tb.Controllers
+namespace student.Controllers
 {
     public class BaController : Controller
     {
         // GET: Ba
-        Models.MvctbEntities db = new Models.MvctbEntities();
+        Models.MvctbEntities1 db = new Models.MvctbEntities1();
         public ActionResult Index()
         {
             List<Models.Ba> list = db.Bas.OrderByDescending(b => b.createdate).ToList();
@@ -19,12 +19,12 @@ namespace tb.Controllers
         [HttpGet]
         public ActionResult Add()
         {
-            tb.Models.Ba insert = new Models.Ba();
+            student.Models.Ba insert = new Models.Ba();
             return View(insert);
         }
 
         [HttpPost]
-        public ActionResult Add(tb.Models.Ba n)
+        public ActionResult Add(student.Models.Ba n)
         {
             n.createdate = DateTime.Now;
             db.Bas.Add(n);

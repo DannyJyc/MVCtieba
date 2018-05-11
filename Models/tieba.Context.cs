@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace tb.Models
+namespace student.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MvctbEntities : DbContext
+    public partial class MvctbEntities1 : DbContext
     {
-        public MvctbEntities()
-            : base("name=MvctbEntities")
+        public MvctbEntities1()
+            : base("name=MvctbEntities1")
         {
         }
     

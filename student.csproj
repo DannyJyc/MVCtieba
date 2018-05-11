@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{018A6BAA-7786-4D9D-995C-685B5B424661}</ProjectGuid>
+    <ProjectGuid>{9B737CED-01FA-4435-ACE1-B8000D5EF05C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>tb</RootNamespace>
-    <AssemblyName>tb</AssemblyName>
+    <RootNamespace>student</RootNamespace>
+    <AssemblyName>student</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -51,6 +51,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -104,8 +107,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\tieba.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>tieba.Context.cs</LastGenOutput>
       <DependentUpon>tieba.edmx</DependentUpon>
+      <LastGenOutput>tieba.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\tieba.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -114,22 +117,31 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\tieba.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>tieba.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\tieba.edmx.diagram">
+      <DependentUpon>tieba.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\TieContent\Add.cshtml" />
+    <Content Include="Views\Ba\Add.cshtml" />
     <Content Include="Views\Tie\Index.cshtml" />
     <Content Include="Views\Tie\Add.cshtml" />
-    <Content Include="Views\Ba\Index.cshtml" />
-    <Content Include="Views\Ba\Add.cshtml" />
+    <Content Include="Views\TieContent\Index.cshtml" />
+    <Content Include="Views\TieContent\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaController.cs" />
     <Compile Include="Controllers\TieContentController.cs" />
     <Compile Include="Controllers\TieController.cs" />
+    <Compile Include="DAL\Hf_DAL.cs" />
+    <Compile Include="DAL\JsonChange.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -164,21 +176,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\tieba.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>tieba.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\tieba.edmx.diagram">
-      <DependentUpon>tieba.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\TieContent\Index.cshtml" />
+    <Content Include="Views\Ba\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\TieContent\AddtoHf.cshtml" />
+    <Content Include="Views\TieContent\TestJson.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -188,7 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Tiw\" />
+    <Folder Include="Views\Hf\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -206,9 +213,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>8331</DevelopmentServerPort>
+          <DevelopmentServerPort>7390</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:8331/</IISUrl>
+          <IISUrl>http://localhost:7390/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

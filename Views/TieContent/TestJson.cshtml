@@ -1,0 +1,55 @@
+﻿
+@model IEnumerable<student.Models.Tie>
+@{
+    Layout = null;
+    ViewBag.Title = "TestJson";
+}
+
+@*<script>
+
+    var x1 = document.getElementsByTagName("input").value;
+
+
+
+            for (var o in x1) {
+                document.write("<span>" + x1[o].tiecontent + "</span><br>")
+                var a = x1[o].hf
+                for (var i in a) {
+                    document.write("<span>" + a[i].tiecontent + "</span><br>")
+                }
+            }
+
+
+    </script>*@
+@for (int i = 0; i < ViewBag.j.Count; i++)
+{
+    <span>@ViewBag.j[i].tiecontent</span><br />
+
+    var a = ViewBag.j[i].hf;
+    if (a != null)
+    {
+        for (int j = 0; j < a.Count; j++)
+        {
+            <span>@a[j].tiecontent</span><br/>
+        }
+    }
+    
+
+
+
+
+    <hr />
+}
+@*@foreach (var item in ViewBag.j)
+    {
+        <span>@item.tiecontent</span>
+        foreach (var item1 in item.hf)
+        {
+            <span>@item1.tiecontent</span>
+        }
+    }*@
+
+
+<h2>TestJson</h2>
+
+

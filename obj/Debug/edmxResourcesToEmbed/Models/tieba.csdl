@@ -36,7 +36,7 @@
     <Property Name="tie_content" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
-  <EntityContainer Name="MvctbEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="MvctbEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Bas" EntityType="Self.Ba" />
     <EntitySet Name="hfs" EntityType="Self.hf" />
     <EntitySet Name="Ties" EntityType="Self.Tie" />
